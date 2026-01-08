@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Showdata from "./Showdata";
+import "./Signup.css"
 
 
 const Signup=()=>{
@@ -37,13 +38,12 @@ const Signup=()=>{
         e.preventDefault();
         console.log("all form data:", user);
 
-        
-       
 
         setFormData([
             ...formData,     // preserve previous data
             user             // then add the new data to the formData state varialbe(now all the data store in formData array)
         ]);
+
 
         //after submit empty the input field
         setUser({
@@ -54,6 +54,7 @@ const Signup=()=>{
             email:"",
             phone:""
         })
+
         //after submit display the table
         setShowTable(true);
         
@@ -61,62 +62,56 @@ const Signup=()=>{
 
 
     //The handleGoBack function toggles the value of showTable.
-     
     function handleGoBack(){
         setShowTable(!showTable);
     }
-    
 
-    if(!showTable){   //if showTable is false
+
+    if(showTable===false){   
 
         return(
-            <div>
-                <form onSubmit={handleSubmit}>
+            <div className="main">
+                <form onSubmit={handleSubmit} className="totalForm">
                     <div className="header">
                         <h2>Signup Form</h2>
                     </div>
 
-                    <div className="petname">
+                    <div className="all">
                         <label>Pet Name</label>
                         <input type="text" placeholder="Pet Name" name="petname" onChange={handleChange} value={user.petname}/>
                     </div>
 
-                    <div className="pettype">
+                    <div className="all">
                         <label>Pet Type</label>
                         <input type="text" placeholder="Pet Type" name="pettype" onChange={handleChange} value={user.pettype}/>
                     </div>
 
-                    <div className="breed">
+                    <div className="all">
                         <label>Breed</label>
                         <input type="text" placeholder="Breed" name="breed" onChange={handleChange} value={user.breed}/>
                     </div>
 
-                    <div className="yourname">
+                    <div className="all">
                         <label>Your Name</label>
                         <input type="text" placeholder="Your Name" name="yourname" onChange={handleChange} value={user.yourname}/>
                     </div>
 
-                    <div className="email">
+                    <div className="all">
                         <label>Email</label>
                         <input type="text" placeholder="Email" name="email" onChange={handleChange} value={user.email}/>
                     </div>
 
-                    <div className="phone">
+                    <div className="all">
                         <label>Phone</label>
                         <input type="number" placeholder="Phone" name="phone" onChange={handleChange} value={user.phone}/>
                     </div>
 
-                    <div>
-                        <button type="submit">submit</button>
+                    <div className="all">
+                        <button type="submit" className="button">submit</button>
                     </div>
-                    
 
+                </form> 
 
-                </form>
-                <br />
-                <br />
-                
-                
             </div>
             
         );
