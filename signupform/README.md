@@ -1,16 +1,37 @@
-# React + Vite
+# Pet Adoption Form - React Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Build a simple React app where users can fill out a pet adoption form and view the data in a table.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app has three main parts:
 
-## React Compiler
+1. **Header**: Displays the app’s title.
+2. **Form**: Users fill in details like name, contact info, and pet preferences.
+3. **Table**: Shows the submitted form data after submission.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Learning Goals
 
-## Expanding the ESLint configuration
+- Build React components (Header, Form, Table).
+- Use `useState` to manage form input and state.
+- Pass data between components using props.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   
+### Reference UI:
+
+![Image](https://utfs.io/f/A8JZzw0Laf9jEsK2MkhBOGFYQHrk5EVpZl0KxbMgqjTtPu3a)
+![Image](https://utfs.io/f/A8JZzw0Laf9jdVd6HKrWunt9yxDYPKUZgv60iAroJbcMF5RN)
+
+### Bonus Challenge (Optional)
+
+- **Custom Form Validation**: Enhance the form by adding custom validation functions. For example:
+  - Validate that the pet name, breed, and adopter's name fields have a minimum length (e.g., 3 characters).
+  - Ensure the email is in a valid format (e.g., using a regex).
+  - Check that the phone number is a valid 10-digit number.
+  - Add validation that runs on the `onChange` event to give users real-time feedback while typing.
+
+This is a great opportunity to test your JavaScript skills and improve form handling in React!
+
+### Reference UI:
+
+![Image](https://utfs.io/f/A8JZzw0Laf9jrt9I1tTprxkXMzACaTGB9sui0gJOPShZYdHF)
