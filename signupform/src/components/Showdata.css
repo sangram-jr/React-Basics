@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+.upper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+/* apply style on the table*/
+table, th, td {
+  border: 2px solid gray;
+  border-collapse: collapse;
+  border-spacing: 15px;
+}
+th, td {
+  padding: 10px;
+}
+table{
+    width: 1000px;
+}
+td{
+    text-align: center;
+}
+th{
+    background-color: rgb(161, 186, 209);
+    color: black;
+}
+
+.btn2{
+    padding:10px 10px ;
+    margin: 20px 20px ;
+    cursor: pointer;
+    background-color: aquamarine;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+}
+

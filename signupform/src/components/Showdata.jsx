@@ -1,7 +1,7 @@
-
+import './Showdata.css'
 function Showdata({formData,handleGoBack}){
     return (
-        <div>
+        <div className='upper'>
             <div className="table">
                 <table>
                     <thead>
@@ -33,8 +33,8 @@ function Showdata({formData,handleGoBack}){
                 </table>
             </div>
 
-            <div className="button">
-                <button onClick={handleGoBack}>Go to signUp form</button>
+            <div>
+                <button onClick={handleGoBack} className='btn2'>Go to signUp form</button>
             </div>
 
         </div>

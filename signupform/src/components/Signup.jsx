@@ -107,7 +107,7 @@ const Signup=()=>{
                     </div>
 
                     <div className="all">
-                        <button type="submit" className="button">submit</button>
+                        <button type="submit" className="btn">submit</button>
                     </div>
 
                 </form> 
