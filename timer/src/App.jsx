@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-
+import './App.css'
 
 function App() {
 
@@ -57,12 +57,14 @@ function App() {
 
 
   return (
-    <div>
-      <p>{hour}:{minute}:{second}:{milisecond}</p>
-
-      <button onClick={handleClick}>start</button>
-      <button onClick={handlePause}>pause</button>
-      <button onClick={handleReset}>Reset</button>
+    <div className="main">
+      <p className="time">{hour}:{minute}:{second}:{milisecond}</p>
+      <div className="btn">
+        <button onClick={handleClick}>start</button>
+        <button onClick={handlePause}>pause</button>
+        <button onClick={handleReset}>Reset</button>
+      </div>
+      
     </div>
   )
 }
