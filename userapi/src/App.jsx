@@ -20,17 +20,26 @@ function App() {
   
   },[page]);
 
+
+
+  function pageRefresh(){
+    setPage(c=>c+1);
+  }
+
   return (
-    <div>
-      
-      {
-        user.map((data,index)=>(
-          <div key={index}>
-            {data.email}
-          </div>
-        ))
-      }
-      
+    <div className='upper'>
+      <h1>User Data</h1>
+      <div className='main'>
+          {
+            user.map((data,index)=>(
+              <div key={index} className='box'>
+                <img src={data.picture.thumbnail} />
+                <h3>{data.name.first}</h3>
+              </div>
+            ))
+          }
+      </div>
+      <button onClick={pageRefresh}>add</button>
       
     </div>
   )
