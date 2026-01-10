@@ -8,12 +8,15 @@ function App() {
 
   const [user,setUser]=useState([]);
   const [page,setPage]=useState(1);
+  const [loading,setLoading]=useState(false);
 
   useEffect(()=>{
 
     const fetchApi= async()=>{
+        setLoading(true);
         const response=await axios.get(`https://randomuser.me/api?page=${page}&results=5`);
         setUser((prevUser)=>[...prevUser,...response.data.results]);//merge prevUser and response.data.results(new user data)
+        setLoading(false);
     }
 
     fetchApi();
@@ -39,7 +42,15 @@ function App() {
             ))
           }
       </div>
-      <button onClick={pageRefresh}>add</button>
+
+      <div className='loading-text'>
+        {loading && "loading...."}
+      </div>
+      
+      <div className='btn'>
+        <button onClick={pageRefresh}>add</button>
+      </div>
+      
       
     </div>
   )
