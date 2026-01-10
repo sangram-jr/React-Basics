@@ -5,6 +5,37 @@ import { useState } from "react"
 //step 1: create a context
 const lightContext=createContext();
 
+
+
+/*best way to create a function and all state and provider define into that fucntion
+function lightProvider({children}){ //this children means <Bulb/> --> that i pass into app component
+
+  const [light,setLight]=useState(false);
+
+  return (
+    <div>
+      <lightContext.Provider value={{light,setLight}}>
+        {children}
+      </lightContext.Provider>
+      
+    </div>
+}
+
+fucntion App(){
+  return(
+    <div>
+      <lightProvider>
+        <Bulb/> 
+      </lightProvider>
+    </div>
+  )
+}
+
+
+*/
+
+
+
 function App() {
   const [light,setLight]=useState(false);
 
@@ -45,7 +76,7 @@ function BulbOn(){
 
 
 function ToggleButton(){
-  
+
   ////step 3: use provided data using useContex hook
   const {light,setLight}=useContext(lightContext);
 
