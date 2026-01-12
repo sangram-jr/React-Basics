@@ -6,8 +6,6 @@ const Cart=()=>{
     const cnt=cartState((state)=> state.count);
     const setCnt=cartState((state)=>state.setCount);
 
-    
-
     return(
         <div>
           {cnt}
