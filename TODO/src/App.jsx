@@ -10,7 +10,8 @@ function App() {
       setInput(e.target.value);
   }
 
-  function clickHandler(e){
+  //add
+  function addHandler(e){
     e.preventDefault();
     const newTodo={
       id:Date.now(),
@@ -22,9 +23,16 @@ function App() {
       ...todos,
       newTodo
     ])
+
     setInput('');
-    
-    
+   
+  }
+  //delete
+  function deleteHandler(id){ ////whose id not found,push that content to the array-->means we ignore the specific id
+    const foundOthers=todos.filter((x)=>(
+      x.id!==id
+    ))
+    setTodos(foundOthers);
   }
 
   return (
@@ -37,17 +45,22 @@ function App() {
           value={input}
           onChange={onChangeHandler}
         />
-        <button onClick={clickHandler}>add</button>
+        <button onClick={addHandler}>add</button>
       </div>
       
       <div className='showData'>
         <ul>
           {
             todos.map((x)=>(
-              <li key={x.id}>{x.content}</li>
+              <li key={x.id}>
+
+                {x.content}
+                <button onClick={()=> deleteHandler(x.id)}>delete</button>
+              </li>
             ))
           }
         </ul>
+        
         
       </div>
     </div>
