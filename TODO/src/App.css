@@ -1,1 +1,5 @@
-
+.classIsComplete{
+    text-decoration: line-through;
+    color: gray;
+    cursor: pointer;
+}

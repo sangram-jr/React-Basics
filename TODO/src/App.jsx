@@ -35,6 +35,14 @@ function App() {
     setTodos(foundOthers);
   }
 
+  //done
+  function doneHandler(id){
+    const foundOne=todos.map((x)=>(
+      x.id===id ? {...x,isComplete:!x.isComplete} : x
+    ))
+    setTodos(foundOne);
+  }
+
   return (
     <div>
       <div>
@@ -52,9 +60,9 @@ function App() {
         <ul>
           {
             todos.map((x)=>(
-              <li key={x.id}>
+              <li key={x.id} className={x.isComplete?'classIsComplete':''}>
 
-                {x.content}
+                <span onClick={()=> doneHandler(x.id)}>{x.content}</span>
                 <button onClick={()=> deleteHandler(x.id)}>delete</button>
               </li>
             ))
