@@ -48,6 +48,11 @@ function UniversalStore({children}){
         return cartItem.reduce((total,product)=>total+product.quantity*product.price,0);
     }
 
+    //clear cart
+    function clearCart(){
+        setCartItem([]);
+    }
+
     //store in localstorage
     useEffect(()=>{
         localStorage.setItem('totalItem',JSON.stringify(cartItem) )
@@ -57,7 +62,7 @@ function UniversalStore({children}){
 
 
     return (
-        <cartContext.Provider value={{cartItem,setCartItem, addToCart,deleteFromCart,getTotal}}>
+        <cartContext.Provider value={{cartItem,setCartItem, addToCart,deleteFromCart,getTotal,clearCart}}>
             {children}
         </cartContext.Provider>
     )

@@ -1,6 +1,9 @@
+import { createContext, useContext } from "react";
 import { useState } from "react";
+import { cartContext } from "../../store/context";
 
 const Wishlist=()=>{
+    const { addToCart }=useContext(cartContext)
     const [item,setItem]=useState([
         { 
             id: 1, 
@@ -33,7 +36,7 @@ const Wishlist=()=>{
                             <p>{x.price}</p>
                         </div>
                         <div>
-                            <button>add to cart</button>
+                            <button onClick={()=> addToCart(x)}>add to cart</button>
                         </div>
                     </div>
                 ))
