@@ -7,40 +7,46 @@ const Wishlist=()=>{
     const [item,setItem]=useState([
         { 
             id: 1, 
-            name: 'GFG T-shirt', 
-            price: 499, 
-            image:'https://media.geeksforgeeks.org/wp-content/uploads/20230823165506/gfg1.png'
+            name: 'Laptop Stand', 
+            price: 299, 
+            image:'https://m.media-amazon.com/images/I/610ar-RgbpL._AC_UL480_FMwebp_QL65_.jpg'
         },
         { 
             id: 2, 
-            name: 'GFG Bag', 
-            price: 699, 
-            image:'https://media.geeksforgeeks.org/wp-content/uploads/20230823165553/gfg2.jpg'
+            name: 'Desktop', 
+            price: 1999, 
+            image:'https://m.media-amazon.com/images/I/71I0KQmcYBL._AC_UY327_FMwebp_QL65_.jpg'
         },
         { 
             id: 3, 
-            name: 'GFG Hoodie', 
-            price: 799, 
-            image:'https://media.geeksforgeeks.org/wp-content/uploads/20230823165623/gfg3.jpg'
+            name: 'Laptop', 
+            price: 7999, 
+            image:'https://m.media-amazon.com/images/I/71H9R4OoBOL._AC_UY327_FMwebp_QL65_.jpg'
 		}
     ])
 
     return (
-        <div>
-            {
-                item.map((x)=>(
-                    <div key={x.id}>
-                        <img src={x.image}/>
-                        <div>
-                            <p>{x.name}</p>
-                            <p>{x.price}</p>
+        <div className="min-h-screen bg-slate-100 text-black">
+            <div>
+                <h1 className=" flex justify-center items-center font-bold pt-8 text-4xl">Your Wish List</h1>
+            </div>
+            <div className=" flex justify-center items-center my-4">
+                {
+                    item.map((x)=>(
+                        <div key={x.id} className="bg-white h-100 w-100 m-3 shadow-md rounded-xl flex flex-col justify-center items-center">
+                            <img src={x.image} height={100} width={150}/>
+                            <div className="font-bold my-2">
+                                <p>{x.name}</p>
+                                <p>${x.price}</p>
+                            </div>
+                            
+                            <button onClick={()=> addToCart(x)} className="bg-amber-300 text-black  rounded-3xl w-48 h-8 text-center font-semibold cursor-pointer py-1 transition delay-100 duration-300 ease-in hover:bg-amber-400 hover:translate-y-1 hover:scale-105 hover:cursor-pointer">add to cart</button>
+                            
                         </div>
-                        <div>
-                            <button onClick={()=> addToCart(x)}>add to cart</button>
-                        </div>
-                    </div>
-                ))
-            }
+                    ))
+                }
+            </div>
+            
         </div>
     )
 }

@@ -8,7 +8,7 @@ const Navbar=()=>{
         <div>
             <BrowserRouter>
                 {/* Navlink */}
-                <nav className='flex justify-between bg-violet-700 h-14  text-white'>
+                <nav className='flex justify-between bg-slate-900 h-14  text-white'>
                     <div className='ml-30 mt-2.5 cursor-pointer font-bold text-2xl  hover:text-slate-300 hover:scale-110 transition-all duration-300 ease-in-out'>
                         <h4>amazon</h4>
                     </div> 
