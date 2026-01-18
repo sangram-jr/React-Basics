@@ -11,7 +11,7 @@ const Cart=()=>{
                 <h1 className=" flex justify-center items-center font-bold pt-8 text-4xl">Shoping Cart</h1>
             </div>
             <div className="flex justify-between my-4">
-                <div className="ml-30">
+                <div className="ml-30 mr-7">
                 {
                     cartItem.map((x)=>(
                         <div key={x.id} className="flex h-50 w-230 bg-white shadow-md m-5">
@@ -39,18 +39,31 @@ const Cart=()=>{
                 <div className="mr-30">
                     {
                         cartItem.length>0 ? (
-                            <div>
-                                <h1>total: ${getTotal()}</h1>
-                                <button onClick={()=>clearCart()}>clear cart</button>
+                            <div className="bg-white h-80 w-70 mr-10 mt-6 rounded-sm ">
+                                <h1 className="font-bold text-2xl pt-5 pl-3">Order Summary</h1>
+
+                                {/* this div for horizontal line*/}
+                                <div className="px-3 mt-6">
+                                    <div className="h-px bg-gray-400"></div>
+                                </div>
+                                
+                                <div className="pt-7 flex justify-between">
+                                    <h1 className="font-bold text-lg pl-4">Order Total : </h1>
+                                    <h1 className="font-bold text-lg pr-4">${getTotal()}</h1>
+                                </div>
+
+                                <div className="flex justify-center items-center mt-7">
+                                    <button className="bg-amber-300 text-black h-8 w-42 rounded-sm text-center font-semibold cursor-pointer shadow-2xl transition-all delay-150 duration-300 ease-in hover:bg-amber-400 hover:scale-105">Proceed to Buy</button>
+                                </div>
+                                <div className="flex justify-center items-center mt-9">
+                                    <button onClick={()=>clearCart()} className="bg-red-500 text-black h-8 w-42 rounded-sm text-center font-semibold cursor-pointer shadow-2xl transition-all delay-150 duration-300 linier hover:bg-red-600 hover:scale-105">clear cart</button>
+                                </div>
+                                
                             </div>
-                        ) : (<h1>your cart is empty</h1>)
+                        ) : (<h1 className="font-bold text-4xl mt-55 mr-120 text-red-500 shadow-2xl">your cart is empty</h1>)
                     }
                 </div>
-            </div>
-            
-          
-          
-         
+            </div>            
         </div>
     )
 }
