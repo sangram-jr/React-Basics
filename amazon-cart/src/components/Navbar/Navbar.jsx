@@ -1,22 +1,33 @@
 import {BrowserRouter, NavLink, Route, Routes} from 'react-router-dom'
 import Wishlist from '../Wishlist/Wishlist';
 import Cart from '../Cart/Cart';
-import logo from '../../assets/logo.png'
+
 
 const Navbar=()=>{
     return(
         <div>
             <BrowserRouter>
                 {/* Navlink */}
-                <nav className='flex justify-between bg-violet-700 h-10  text-white'>
-                    <div className='ml-30 mt-1 cursor-pointer font-bold'>
+                <nav className='flex justify-between bg-violet-700 h-14  text-white'>
+                    <div className='ml-30 mt-2.5 cursor-pointer font-bold text-2xl  hover:text-slate-300 hover:scale-110 transition-all duration-300 ease-in-out'>
                         <h4>amazon</h4>
-                    </div>
-                    <div className='mr-30 mt-1'>
-                        <span className='mr-8 cursor-pointer'><NavLink to={"/"}>Wishlist</NavLink></span>
-                        <span className='mr-8 cursor-pointer'><NavLink to={"/cart"}>Cart</NavLink></span>
-                        <span className='mr-8 cursor-pointer'><NavLink to={"/"}>About Us</NavLink></span>
-                        <span className='cursor-pointer'><NavLink to={"/"}>Login</NavLink></span>
+                    </div> 
+                    <div className='mr-30 mt-3.5 font-semibold '>
+                        <NavLink to="/" className='mr-8 cursor-pointer inline-block transform hover:text-slate-300 hover:scale-105 transition-all duration-300 ease-in-out'>
+                            Wishlist
+                        </NavLink>
+
+                        <NavLink to="/cart" className='mr-8 cursor-pointer inline-block transform hover:text-slate-300 hover:scale-105 transition-all duration-300 ease-in-out'>
+                            Cart
+                        </NavLink>
+
+                        <NavLink to="/" className='mr-8 cursor-pointer inline-block transform hover:text-slate-300 hover:scale-105 transition-all duration-300 ease-in-out'>
+                            About Us
+                        </NavLink>
+
+                        <NavLink to="/" className='mr-8 cursor-pointer inline-block transform hover:text-slate-300 hover:scale-105 transition-all duration-300 ease-in-out'>
+                            Login
+                        </NavLink>
                         
                     </div>
                     
