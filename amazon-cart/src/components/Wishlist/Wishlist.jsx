@@ -35,12 +35,12 @@ const Wishlist=()=>{
                     item.map((x)=>(
                         <div key={x.id} className="bg-white h-100 w-100 m-3 shadow-md rounded-xl flex flex-col justify-center items-center">
                             <img src={x.image} height={100} width={150}/>
-                            <div className="font-bold my-2">
+                            <div className="font-bold my-4">
                                 <p>{x.name}</p>
                                 <p>${x.price}</p>
                             </div>
                             
-                            <button onClick={()=> addToCart(x)} className="bg-amber-300 text-black  rounded-3xl w-48 h-8 text-center font-semibold cursor-pointer py-1 transition delay-100 duration-300 ease-in hover:bg-amber-400 hover:translate-y-1 hover:scale-105 hover:cursor-pointer">add to cart</button>
+                            <button onClick={()=> addToCart(x)} className="bg-amber-300 text-black  rounded-3xl w-48 h-8 text-center font-semibold cursor-pointer py-1 transition delay-100 duration-300 ease-in hover:bg-amber-400 hover:translate-y-1 hover:scale-105 hover:cursor-pointer  shadow-md">add to cart</button>
                             
                         </div>
                     ))
