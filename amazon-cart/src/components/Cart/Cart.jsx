@@ -3,7 +3,7 @@ import { cartContext } from "../../store/context";
 
 
 const Cart=()=>{
-    const {cartItem, addToCart,deleteFromCart,getTotal,clearCart}=useContext(cartContext)
+    const {cartItem, addToCart,deleteFromCart,getTotal,clearCart,getTotalItem}=useContext(cartContext)
 
     return(
         <div className="min-h-screen bg-slate-100 text-black">
@@ -46,16 +46,22 @@ const Cart=()=>{
                                 <div className="px-3 mt-6">
                                     <div className="h-px bg-gray-400"></div>
                                 </div>
-                                
+
                                 <div className="pt-7 flex justify-between">
+                                    <h1 className="font-bold text-lg pl-4">Total Items: </h1>
+                                    <h1 className="font-bold text-lg pr-4">{getTotalItem()}</h1>
+                                </div>
+                                
+                                <div className="pt-3 flex justify-between">
                                     <h1 className="font-bold text-lg pl-4">Order Total : </h1>
                                     <h1 className="font-bold text-lg pr-4">${getTotal()}</h1>
                                 </div>
 
-                                <div className="flex justify-center items-center mt-7">
+                                
+                                <div className="flex justify-center items-center mt-5">
                                     <button className="bg-amber-300 text-black h-8 w-42 rounded-sm text-center font-semibold cursor-pointer shadow-2xl transition-all delay-150 duration-300 ease-in hover:bg-amber-400 hover:scale-105">Proceed to Buy</button>
                                 </div>
-                                <div className="flex justify-center items-center mt-9">
+                                <div className="flex justify-center items-center mt-5">
                                     <button onClick={()=>clearCart()} className="bg-red-500 text-black h-8 w-42 rounded-sm text-center font-semibold cursor-pointer shadow-2xl transition-all delay-150 duration-300 linier hover:bg-red-600 hover:scale-105">clear cart</button>
                                 </div>
                                 

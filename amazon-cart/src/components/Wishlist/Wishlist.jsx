@@ -30,7 +30,7 @@ const Wishlist=()=>{
             <div>
                 <h1 className=" flex justify-center items-center font-bold pt-8 text-4xl">Your Wish List</h1>
             </div>
-            <div className=" flex justify-center items-center my-4">
+            <div className=" flex justify-center items-center flex-wrap my-4">
                 {
                     item.map((x)=>(
                         <div key={x.id} className="bg-white h-100 w-100 m-3 shadow-md rounded-xl flex flex-col justify-center items-center">

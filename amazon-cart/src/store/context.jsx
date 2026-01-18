@@ -48,6 +48,11 @@ function UniversalStore({children}){
         return cartItem.reduce((total,product)=>total+product.quantity*product.price,0);
     }
 
+    //total item
+    function getTotalItem(){
+        return cartItem.reduce((total,product)=> total+product.quantity,0);
+    }
+
     //clear cart
     function clearCart(){
         setCartItem([]);
@@ -62,7 +67,7 @@ function UniversalStore({children}){
 
 
     return (
-        <cartContext.Provider value={{cartItem,setCartItem, addToCart,deleteFromCart,getTotal,clearCart}}>
+        <cartContext.Provider value={{cartItem,setCartItem, addToCart,deleteFromCart,getTotal,getTotalItem,clearCart}}>
             {children}
         </cartContext.Provider>
     )
