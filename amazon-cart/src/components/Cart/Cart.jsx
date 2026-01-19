@@ -10,25 +10,25 @@ const Cart=()=>{
             <div>
                 <h1 className=" flex justify-center items-center font-bold pt-8 text-4xl">Shoping Cart</h1>
             </div>
-            <div className="flex justify-between my-4">
-                <div className="ml-30 mr-7">
+            <div className="flex flex-wrap my-2 sm:flex sm:justify-between sm:my-4">
+                <div className="ml-1 mr-1 sm:ml-30 sm:mr-7">
                 {
                     cartItem.map((x)=>(
-                        <div key={x.id} className="flex h-50 w-230 bg-white shadow-md m-5">
-                            <div className="p-10">
-                                <img src={x.image} height={100} width={150}/>
+                        <div key={x.id} className="flex h-23 w-75 bg-white shadow-md m-2 sm:flex sm:h-50 sm:w-230 sm:bg-white sm:shadow-md sm:m-5">
+                            <div className="pt-10 pl-2 sm:p-10 ">
+                                <img src={x.image} className="h-7 w-12 sm:h-25 sm:w-37.5"/>
                             </div>
-                            <div className="pl-45 pt-15">
-                                <p className="font-bold text-xl text-gray-800">{x.name}</p>
-                                <p className="text-green-500 text-md font-semibold mt-1.5">In Stock</p>
-                                <div className="flex gap-4.5 mt-1.5">
+                            <div className="pl-12 pt-2 sm:pl-45 sm:pt-15">
+                                <p className="font-semibold text-lg text-gray-800 sm:font-bold sm:text-xl sm:text-gray-800">{x.name}</p>
+                                <p className="text-green-500 text-sm mt-0 sm:text-green-500 sm:text-md sm:font-semibold sm:mt-1.5">In Stock</p>
+                                <div className="flex gap-4 mt-1.5">
                                     <button onClick={()=> addToCart(x)} className="bg-gray-400 text-black font-semibold text-lg rounded-sm h-5 w-5 cursor-pointer flex justify-center items-center hover:bg-gray-300">+</button>
                                     <p className="font-semibold text-md">{x.quantity}</p>
                                     <button onClick={()=>deleteFromCart(x)} className="bg-gray-400 text-black font-semibold text-lg rounded-sm h-5 w-5 cursor-pointer flex justify-center items-center hover:bg-gray-300">-</button> 
                                 </div>
                                    
                             </div>
-                            <div className="pl-75 pt-20 font-bold text-lg">
+                            <div className="pl-20 pt-7 pr-1 font-semibold text-md sm:pl-75 sm:pt-20 sm:font-bold sm:text-lg">
                                 <p>${x.price}.00</p>
                             </div>
                         </div>
