@@ -10,11 +10,11 @@ const Cart=()=>{
             <div>
                 <h1 className=" flex justify-center items-center font-bold pt-8 text-4xl">Shoping Cart</h1>
             </div>
-            <div className="flex flex-wrap my-2 sm:flex sm:justify-between sm:my-4">
+            <div className="flex flex-wrap my-2 sm:flex-nowrap sm:justify-between sm:my-4">
                 <div className="ml-1 mr-1 sm:ml-30 sm:mr-7">
                 {
                     cartItem.map((x)=>(
-                        <div key={x.id} className="flex h-23 w-75 bg-white shadow-md m-2 sm:flex sm:h-50 sm:w-230 sm:bg-white sm:shadow-md sm:m-5">
+                        <div key={x.id} className="flex h-30 w-75 bg-white shadow-md m-2 sm:flex sm:h-50 sm:w-230 sm:bg-white sm:shadow-md sm:m-5">
                             <div className="pt-10 pl-2 sm:p-10 ">
                                 <img src={x.image} className="h-7 w-12 sm:h-25 sm:w-37.5"/>
                             </div>
@@ -28,7 +28,7 @@ const Cart=()=>{
                                 </div>
                                    
                             </div>
-                            <div className="pl-20 pt-7 pr-1 font-semibold text-md sm:pl-75 sm:pt-20 sm:font-bold sm:text-lg">
+                            <div className="pl-20 pt-11 pr-1 font-semibold text-md sm:pl-75 sm:pt-20 sm:font-bold sm:text-lg">
                                 <p>${x.price}.00</p>
                             </div>
                         </div>
@@ -36,7 +36,7 @@ const Cart=()=>{
                 }
                 </div>
 
-                <div className="mr-30">
+                <div className="ml-5 mr-5 sm:mr-30">
                     {
                         cartItem.length>0 ? (
                             <div className="bg-white h-80 w-70 mr-10 mt-6 rounded-sm ">
@@ -66,7 +66,7 @@ const Cart=()=>{
                                 </div>
                                 
                             </div>
-                        ) : (<h1 className="font-bold text-4xl mt-55 mr-120 text-red-500 shadow-2xl">your cart is empty</h1>)
+                        ) : (<h1 className="font-bold text-2xl mt-20 ml-6  text-red-500 sm:font-bold sm:text-4xl sm:mt-55 sm:mr-120 sm:text-red-500 sm:shadow-2xl">your cart is empty</h1>)
                     }
                 </div>
             </div>            

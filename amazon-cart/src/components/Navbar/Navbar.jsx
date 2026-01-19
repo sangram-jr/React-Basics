@@ -17,7 +17,7 @@ const Navbar=()=>{
             <BrowserRouter>
                 {/* Navlink */}
                 <nav className='flex justify-between bg-slate-900 h-14  text-white'>
-                    <div className='ml-30 mt-2.5 cursor-pointer font-bold text-2xl  hover:text-slate-300 hover:scale-110 transition-all duration-300 ease-in-out'>
+                    <div className='ml-3 cursor-pointer font-bold text-xl mt-2.5 sm:ml-30 sm:mt-2.5 sm:cursor-pointer sm:font-bold sm:text-2xl  sm:hover:text-slate-300 sm:hover:scale-110 sm:transition-all sm:duration-300 sm:ease-in-out'>
                         <h4>amazon.in</h4>
                     </div>
                     {/*Desktop Nav */} 
