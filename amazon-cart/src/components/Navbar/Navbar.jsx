@@ -38,13 +38,13 @@ const Navbar=()=>{
                         
                     </div>
                     
-                    <button onClick={toggleOpen} className='text-2xl cursor-pointer mr-3'>=</button>
+                    <button onClick={toggleOpen} className='sm:hidden text-2xl cursor-pointer mr-3'>☰</button>
                     
                 </nav>
                 {/*Mobile Nav */}
                 {open && (
                     <nav>
-                        <div className='flex flex-col bg-slate-900 text-white items-center justify-center p-4  font-semibold '>
+                        <div className='sm:hidden flex flex-col bg-slate-900 text-white items-center justify-center p-4  font-semibold '>
                             <NavLink to="/" className=' cursor-pointer inline-block transform hover:text-slate-300 hover:scale-105 transition-all duration-300 ease-in-out'>
                                 Wishlist
                             </NavLink>
